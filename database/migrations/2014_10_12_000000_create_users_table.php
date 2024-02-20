@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('email', 255)->unique();
-            $table->text('description')->default('Some description');
+            $table->text('description');
             $table->string('avatar', 255)->default('placeholder');
             $table->string('password', 255);
             $table->rememberToken();
@@ -26,11 +26,13 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        // Ubah cara memberikan nilai default pada kolom 'description'
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
             'role_id' => 1,
+            'description' => 'Some description', // Berikan nilai default langsung pada saat pembuatan user
         ]);
     }
 
