@@ -8,6 +8,12 @@ import { createApp, h } from "vue";
 import { ZiggyVue } from "../../vendor/tightenco/ziggy/dist/vue.m";
 import ImageFallback from "./components/ImageFallback.vue"; // Import komponen ImageFallback
 
+import Swiper from "swiper/bundle";
+import "animate.css";
+import WOW from "wow.js";
+import "wow.js/css/libs/animate.css"; // Impor animasi CSS jika diperlukan
+import "swiper/css/bundle";
+
 createInertiaApp({
     resolve: (name) =>
         resolvePageComponent(
@@ -15,6 +21,10 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.vue")
         ),
     setup({ el, App, props, plugin }) {
+        // Inisialisasi Swiper jika diperlukan
+        const swiper = new Swiper();
+        new WOW().init();
+
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .component("inertia-link", Link)

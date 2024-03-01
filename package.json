@@ -19,6 +19,11 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.4.0",
-        "nprogress": "^0.2.0"
+        "animate.css": "^4.1.1",
+        "install": "^0.13.0",
+        "nprogress": "^0.2.0",
+        "swiper": "^11.0.7",
+        "wow.js": "^1.2.2",
+        "wowjs": "^1.1.3"
     }
 }
